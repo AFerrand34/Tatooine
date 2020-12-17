@@ -1,7 +1,6 @@
 name: Publish on Netlify
-on:
+on: [push]
 jobs:
-  push:
     publish:
       runs-on: ubuntu-latest
       steps:   
