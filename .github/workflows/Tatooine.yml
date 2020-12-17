@@ -15,12 +15,3 @@ jobs:
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-  
-  pull_request:
-    publish:
-        runs-on: ubuntu-latest
-        steps:   
-        - uses: actions/checkout@master
-        - run: sudo apt update && sudo apt install asciidoctor && sudo apt install linkchecker
-        - run: make all
-        - run: linkchecker --check-extern ./dist/main.html
